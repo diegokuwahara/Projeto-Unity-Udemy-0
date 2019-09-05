@@ -7,22 +7,29 @@ public class Player : MonoBehaviour
     #region [ Variáveis públicas ]
 
     public float speed;
+    public float attackRate;
     public int jumpForce;
     public int health;
     public Transform groundCheck;
+    public Transform attackSpawn;
+    public GameObject slashPrefab;
 
     #endregion  
 
     #region [ Variáveis privadas ] 
+
     private bool isInvulnerable = false;
     private bool isGrounded = false;
     private bool isJumping = false;
     private bool isFacingRight = true;
 
+    private float nextAttack = 0f;
+
     private SpriteRenderer sprite;
     private Rigidbody2D rigidBody2D;
     private Animator animator;
     private Transform transform;
+    
 
     #endregion 
 
@@ -43,6 +50,11 @@ public class Player : MonoBehaviour
         }
 
         this.Animations();
+
+        if (Input.GetButtonDown("Fire1") && isGrounded && Time.time > nextAttack)
+        {
+            this.Attack();
+        }
     }
 
     private void FixedUpdate() {
@@ -70,5 +82,17 @@ public class Player : MonoBehaviour
         animator.SetFloat("VelY", rigidBody2D.velocity.y);
         animator.SetBool("isMidAir", !isGrounded);
         animator.SetBool("isWalking", isGrounded && rigidBody2D.velocity.x != 0f);
+    }
+
+    private void Attack(){
+        animator.SetTrigger("Attack");
+        nextAttack = Time.time + attackRate;
+
+        GameObject attackClone = Instantiate(slashPrefab, attackSpawn.position, attackSpawn.rotation);
+
+        if (!isFacingRight)
+        {
+            attackClone.transform.eulerAngles = new Vector3(180, 0, 180);
+        }
     }
 }
