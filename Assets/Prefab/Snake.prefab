@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 150910788235111443}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: wallCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126814065355914952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.073, y: -1.1, z: 0}
+  m_LocalPosition: {x: 0.61, y: -0.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5425335591088494825}
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5425335591088494827}
   - component: {fileID: 5425335591088494826}
   - component: {fileID: 5425335591088494830}
+  - component: {fileID: 5425335592326904813}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -128,8 +129,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02838707, y: -0.61742103}
-  m_Size: {x: 1.0632231, y: 1.0632231}
+  m_Offset: {x: -0.10171768, y: -0.55142355}
+  m_Size: {x: 0.931228, y: 0.95322704}
   m_Direction: 0
 --- !u!50 &5425335591088494826
 Rigidbody2D:
@@ -151,7 +152,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &5425335591088494830
 Animator:
   serializedVersion: 3
@@ -171,3 +172,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5425335592326904813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425335591088494869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571b95f3417833b4ca0b81856570b536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallCheck: {fileID: 150910788235111443}
+  speed: 4
+  health: 2
