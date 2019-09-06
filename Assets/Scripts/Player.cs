@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidBody2D;
     private Animator animator;
     private Transform transform;
-    
 
     #endregion 
 

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 150910788235111443}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: wallCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 5425335591088494826}
   - component: {fileID: 5425335591088494830}
   - component: {fileID: 5425335592326904813}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Snake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -36,10 +36,42 @@ public class Snake : MonoBehaviour
         this.rigidbody2.velocity = new Vector2(speed, this.rigidbody2.velocity.y);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Slash"))
+        {
+            this.DamageEnemy();
+        }
+    }
+
     private void Flip()
     {
         this.isFacingRight = !isFacingRight;
         base.transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         this.speed *= -1;
+    }
+
+    private IEnumerator DamageEffect()
+    {
+        float actualSpeed = this.speed;
+        this.speed = this.speed * -1;
+        this.spriteRenderer.color = Color.red;
+        rigidbody2.AddForce(new Vector2(0f, 200f));
+
+        yield return new WaitForSeconds(0.1f);
+
+        this.speed = actualSpeed;
+        this.spriteRenderer.color = Color.white;
+    }
+
+    private void DamageEnemy()
+    {
+        health--;
+        StartCoroutine(DamageEffect());
+
+        if(this.health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
