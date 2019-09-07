@@ -20,7 +20,7 @@ TagManager:
   - Player
   - Enemy
   - Trigger
-  - 
+  - Level
   - 
   - 
   - 
@@ -42,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1071065455
+    locked: 0
+  - name: Misc
+    uniqueID: 3427435359
+    locked: 0
+  - name: Ground
+    uniqueID: 4061090143
+    locked: 0
+  - name: Characters
+    uniqueID: 2150949109
     locked: 0

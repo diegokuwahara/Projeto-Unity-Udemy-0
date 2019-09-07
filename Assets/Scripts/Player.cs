@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     private Rigidbody2D rigidBody2D;
     private Animator animator;
-    private Transform transform;
 
     #endregion 
 
@@ -38,11 +37,10 @@ public class Player : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        transform = GetComponent<Transform>();
     }
 
     private void Update() {
-        isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        isGrounded = Physics2D.Linecast(base.transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
         if (Input.GetButtonDown("Jump") && isGrounded){
             isJumping = true;
@@ -74,7 +72,7 @@ public class Player : MonoBehaviour
 
     private void Flip(){
         isFacingRight = !isFacingRight;
-        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.x);
+        base.transform.localScale = new Vector3(-base.transform.localScale.x, base.transform.localScale.y, base.transform.localScale.x);
     }
 
     private void Animations(){

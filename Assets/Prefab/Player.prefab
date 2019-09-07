@@ -163,8 +163,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2144018187
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1724822148711148119, guid: aeb4dcf8ffff58845bb599de6c2c5929,
     type: 3}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  attackRate: 0
+  attackRate: 0.3
   jumpForce: 650
   health: 4
   groundCheck: {fileID: 5226040710129219465}
