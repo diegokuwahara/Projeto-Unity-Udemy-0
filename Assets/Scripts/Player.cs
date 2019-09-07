@@ -94,4 +94,32 @@ public class Player : MonoBehaviour
             attackClone.transform.eulerAngles = new Vector3(180, 0, 180);
         }
     }
+
+    private IEnumerator DamageEffect()
+    {
+        for (float i = 0f; i < 1; i+= 0.1f)
+        {
+            this.sprite.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            this.sprite.enabled = true;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        this.isInvulnerable = false;
+    }
+
+    public void DamagePlayer()
+    {
+        if (!isInvulnerable)
+        {
+            this.isInvulnerable = true;
+            this.health--;
+            StartCoroutine(this.DamageEffect());
+
+            if (this.health <= 0)
+            {
+                Debug.Log("Murieu");
+            }
+        }
+    }
 }

@@ -99,3 +99,8 @@ ehthumbs.db
 [Dd]esktop.ini
 Corridor/Library/ShaderCache/
 Corridor/Library/metadata/
+*.meta
+*.info
+*.info
+Library/assetDatabase3
+Library/metadata/4b/4ba2329b63d54f0187bcaa12486b1b0f

@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6906411704466313646}
   - component: {fileID: 3694996525397083537}
+  - component: {fileID: 5873672914753140700}
   m_Layer: 12
   m_Name: Trigger
   m_TagString: Player
@@ -77,6 +78,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.04848811, y: -0.33941662}
   m_Size: {x: 0.7380325, y: 1.2732961}
   m_Direction: 0
+--- !u!114 &5873672914753140700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349844329076662872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20133d88300b7fb41b4340e9cf2b6e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5873672914627575135
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +249,7 @@ MonoBehaviour:
   speed: 4
   attackRate: 0
   jumpForce: 650
-  health: 0
+  health: 4
   groundCheck: {fileID: 5226040710129219465}
   attackSpawn: {fileID: 4188395489423545459}
   slashPrefab: {fileID: 2141433951249947938, guid: 5f4868181c159774493d78eab6b46401,
