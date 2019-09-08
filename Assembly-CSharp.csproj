@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Camera.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerTrigger.cs" />
      <Compile Include="Assets\Scripts\Slash.cs" />
@@ -80,14 +81,14 @@
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/Kuwahara/New Unity Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.Tilemap.Editor">
+ <HintPath>C:/Users/Kuwahara/New Unity Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/Kuwahara/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/Kuwahara/New Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>C:/Users/Kuwahara/New Unity Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>E:/2019.2.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
