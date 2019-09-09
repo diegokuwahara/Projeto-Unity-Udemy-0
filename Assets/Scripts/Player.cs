@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     private Rigidbody2D rigidBody2D;
     private Animator animator;
+    private Camera camera;
 
     #endregion 
 
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        camera = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     private void Update() {
@@ -95,6 +97,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator DamageEffect()
     {
+        camera.ShakeCamera(0.5f, 0.25f);
+
         for (float i = 0f; i < 1; i+= 0.1f)
         {
             this.sprite.enabled = false;

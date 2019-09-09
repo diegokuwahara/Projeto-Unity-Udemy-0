@@ -9,6 +9,15 @@ public class Camera : MonoBehaviour
 
     private Vector2 velocity;
     private Transform player;
+    private float shakeTimer;
+    private float shakeAmount;
+
+    public void ShakeCamera(float timer, float amount)
+    {
+        shakeTimer = timer;
+        shakeAmount = amount;
+    }
+
 
     // Start is called before the first frame update
     private void Start()
@@ -27,6 +36,16 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+        if (shakeTimer >= 0f)
+        {
+            Vector2 shakePosition = Random.insideUnitCircle * shakeAmount;
+            transform.position = new Vector3(
+                 transform.position.x + shakePosition.x
+                ,transform.position.y + shakePosition.y
+                ,transform.position.z
+            );
+
+            shakeTimer -= Time.deltaTime;
+        }
     }
 }
