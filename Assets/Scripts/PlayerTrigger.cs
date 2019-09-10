@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerTrigger : MonoBehaviour
 {
+    public AudioClip fxCoin;
+
     private Player player;
     private Rigidbody2D rigidbody2Player;
 
@@ -24,6 +26,7 @@ public class PlayerTrigger : MonoBehaviour
         if (collision.CompareTag("Coin"))
         {
             Debug.Log("Coletou");
+            SoundManager.instance.PlaySound(fxCoin);
             Destroy(collision.gameObject);
         }
     }

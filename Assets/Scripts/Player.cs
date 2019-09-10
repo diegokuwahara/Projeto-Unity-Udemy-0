@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     public Transform attackSpawn;
     public GameObject slashPrefab;
     public GameObject coroa;
+    public AudioClip fxHurt;
+    public AudioClip fxJump;
+    public AudioClip fxAttack;
 
     #endregion  
 
@@ -48,12 +51,14 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded){
             isJumping = true;
+            SoundManager.instance.PlaySound(fxJump);
         }
 
         this.Animations();
 
         if (Input.GetButtonDown("Fire1") && isGrounded && Time.time > nextAttack)
         {
+            SoundManager.instance.PlaySound(fxAttack);
             this.Attack();
         }
     }
@@ -119,6 +124,8 @@ public class Player : MonoBehaviour
             this.isInvulnerable = true;
             this.health--;
             StartCoroutine(this.DamageEffect());
+            SoundManager.instance.PlaySound(fxHurt);
+            Hud.instance.RefreshLife(this.health);
 
             if (this.health <= 0)
             {
@@ -135,7 +142,7 @@ public class Player : MonoBehaviour
         GameObject cloneCoroa = Instantiate(coroa, transform.position, Quaternion.identity);
         Rigidbody2D rigidbody2DCoroa = cloneCoroa.GetComponent<Rigidbody2D>();
 
-        rigidBody2D.AddForce(Vector3.up * 1500);
+        rigidbody2DCoroa.AddForce(Vector3.up * 500);
     }
 
     private void ReloadLevel()

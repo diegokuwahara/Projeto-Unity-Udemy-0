@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20133d88300b7fb41b4340e9cf2b6e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fxCoin: {fileID: 8300000, guid: bec99b96061a8c14a83fd68a1ad484ad, type: 3}
 --- !u!1 &5873672914627575135
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,12 +250,15 @@ MonoBehaviour:
   speed: 5
   attackRate: 0.3
   jumpForce: 650
-  health: 2
+  health: 3
   groundCheck: {fileID: 5226040710129219465}
   attackSpawn: {fileID: 4188395489423545459}
   slashPrefab: {fileID: 2141433951249947938, guid: 5f4868181c159774493d78eab6b46401,
     type: 3}
   coroa: {fileID: 777818018303029635, guid: 5718ad8875c9986458028996db7c4414, type: 3}
+  fxHurt: {fileID: 8300000, guid: 3834cdc75a98bc24cb828a2ba4afb10b, type: 3}
+  fxJump: {fileID: 8300000, guid: d1cbc3c04c8d0234aa881ec4b8dfc31a, type: 3}
+  fxAttack: {fileID: 8300000, guid: d87a646ba60879e4ea388d24e6854de5, type: 3}
 --- !u!1 &8470744648675600172
 GameObject:
   m_ObjectHideFlags: 0
