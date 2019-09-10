@@ -23,6 +23,11 @@ public class PlayerTrigger : MonoBehaviour
             player.DamagePlayer();
         }
 
+        if (collision.CompareTag("BoundaryDeath"))
+        {
+            player.KillPlayer();
+        }
+
         if (collision.CompareTag("Coin"))
         {
             Debug.Log("Coletou");

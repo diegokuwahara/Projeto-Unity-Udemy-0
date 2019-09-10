@@ -130,19 +130,21 @@ public class Player : MonoBehaviour
             if (this.health <= 0)
             {
                 Debug.Log("Murieu");
-                this.PlayerDeath();
-                Invoke("ReloadLevel", 2f);
-                gameObject.SetActive(false);
+                this.KillPlayer();
+                
             }
         }
     }
 
-    private void PlayerDeath()
+    public void KillPlayer()
     {
         GameObject cloneCoroa = Instantiate(coroa, transform.position, Quaternion.identity);
         Rigidbody2D rigidbody2DCoroa = cloneCoroa.GetComponent<Rigidbody2D>();
 
         rigidbody2DCoroa.AddForce(Vector3.up * 500);
+
+        Invoke("ReloadLevel", 2f);
+        gameObject.SetActive(false);
     }
 
     private void ReloadLevel()
