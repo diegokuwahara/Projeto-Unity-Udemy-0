@@ -27,10 +27,13 @@ public class Camera : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float posX = Mathf.SmoothDamp(transform.position.x, player.position.x, ref velocity.x, smoothTimeX);
-        float posY = Mathf.SmoothDamp(transform.position.y, player.position.y, ref velocity.y, smoothTimeY);
+        if(player != null)
+        {
+            float posX = Mathf.SmoothDamp(transform.position.x, player.position.x, ref velocity.x, smoothTimeX);
+            float posY = Mathf.SmoothDamp(transform.position.y, player.position.y, ref velocity.y, smoothTimeY);
 
-        transform.position = new Vector3(posX, posY, transform.position.z);
+            transform.position = new Vector3(posX, posY, transform.position.z);
+        }
     }
 
     // Update is called once per frame

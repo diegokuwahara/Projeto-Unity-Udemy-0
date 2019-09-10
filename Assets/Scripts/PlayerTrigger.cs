@@ -20,6 +20,12 @@ public class PlayerTrigger : MonoBehaviour
         {
             player.DamagePlayer();
         }
+
+        if (collision.CompareTag("Coin"))
+        {
+            Debug.Log("Coletou");
+            Destroy(collision.gameObject);
+        }
     }
 
     

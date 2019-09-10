@@ -246,14 +246,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf46a828fe8c5743b537deb21d56a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 5
   attackRate: 0.3
   jumpForce: 650
-  health: 4
+  health: 2
   groundCheck: {fileID: 5226040710129219465}
   attackSpawn: {fileID: 4188395489423545459}
   slashPrefab: {fileID: 2141433951249947938, guid: 5f4868181c159774493d78eab6b46401,
     type: 3}
+  coroa: {fileID: 777818018303029635, guid: 5718ad8875c9986458028996db7c4414, type: 3}
 --- !u!1 &8470744648675600172
 GameObject:
   m_ObjectHideFlags: 0

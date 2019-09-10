@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     public Transform attackSpawn;
     public GameObject slashPrefab;
+    public GameObject coroa;
 
     #endregion  
 
@@ -121,7 +123,23 @@ public class Player : MonoBehaviour
             if (this.health <= 0)
             {
                 Debug.Log("Murieu");
+                this.PlayerDeath();
+                Invoke("ReloadLevel", 2f);
+                gameObject.SetActive(false);
             }
         }
+    }
+
+    private void PlayerDeath()
+    {
+        GameObject cloneCoroa = Instantiate(coroa, transform.position, Quaternion.identity);
+        Rigidbody2D rigidbody2DCoroa = cloneCoroa.GetComponent<Rigidbody2D>();
+
+        rigidBody2D.AddForce(Vector3.up * 1500);
+    }
+
+    private void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 }
